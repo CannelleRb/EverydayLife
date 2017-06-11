@@ -16,7 +16,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "initialise": "npm install && npm install -g webpack && npm install -g webpack-dev-server && webpack",
+    "begin": "npm install && npm install -g webpack && npm install -g webpack-dev-server && webpack",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
