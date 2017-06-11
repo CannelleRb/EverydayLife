@@ -16,8 +16,8 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "initialise": "npm install && node_modules/.bin/webpack",
-    "start": "node_modules/.bin/webpack-dev-server",
+    "initialise": "npm install && npm install -g webpack && npm install -g webpack-dev-server && webpack",
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "RIVARD Stuart <rivard.stuart@gmail.com> (linkedin.com/in/stuart-rivard-673a73110), RUSCH-BONTÉ Cannelle <cannelle.ruschbonte@gmail.com> (linkedin.com/in/cannelle-rusch-bonté-89a96ba9)",
