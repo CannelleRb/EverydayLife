@@ -1,25 +1,28 @@
 {
   "name": "everyday_life",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "author": "RIVARD Stuart <rivard.stuart@gmail.com> (linkedin.com/in/stuart-rivard-673a73110), RUSCH-BONTÉ Cannelle <cannelle.ruschbonte@gmail.com> (linkedin.com/in/cannelle-rusch-bonté-89a96ba9)",
+  "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.0.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "http-server": "^0.10.0",
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "foreman": "^2.0.0",
+    "marked": "^0.3.6",
+    "mongoose": "^4.10.5",
+    "nodemon": "^1.11.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
   },
   "scripts": {
-    "begin": "npm install && npm install -g webpack && npm install -g webpack-dev-server && webpack",
-    "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "RIVARD Stuart <rivard.stuart@gmail.com> (linkedin.com/in/stuart-rivard-673a73110), RUSCH-BONTÉ Cannelle <cannelle.ruschbonte@gmail.com> (linkedin.com/in/cannelle-rusch-bonté-89a96ba9)",
-  "license": "ISC"
+    "start": "react-scripts start",
+    "start-dev": "nf start -p 3000",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
