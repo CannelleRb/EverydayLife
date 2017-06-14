@@ -31,7 +31,7 @@ router.route('/comments')
         });
     })
     .post(function(req, res) {
-        var comment = new Comment();
+        let comment = new Comment();
         comment.author = req.body.author;
         comment.text = req.body.text;
 
