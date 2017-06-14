@@ -4,7 +4,7 @@ let express = require('express');
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 let cors = require('cors');
-let User = require('./model/users')
+let Comment = require('./model/comments')
 
 let app = express();
 let router = express.Router();
@@ -23,24 +23,46 @@ router.get('/', function(req, res) {
     res.json({ message: 'API initialised'});
 });
 
-router.route('/users')
+router.route('/comments')
     .get(function(req,res){
-        User.find(function(error, users){
+        Comment.find(function(error, comments){
             if (error) { res.send(error) };
-            res.json(users)
+            res.json(comments)
         });
     })
-    .post(function(req,res) {
-        var user = new User();
-        user.username = req.body.username;
-        user.password = req.body.password;
+    .post(function(req, res) {
+        var comment = new Comment();
+        comment.author = req.body.author;
+        comment.text = req.body.text;
 
-        user.save(function (error) {
+        comment.save(function (error) {
             if (error) {
                 res.send(error);
             }
-            res.json({message: 'User successfully added !'});
+            res.json({message: 'Comment successfully added !'});
         });
+    });
+
+router.route('/comments/:comment_id')
+    .put(function(req, res) {
+        Comment.findById(req.params.comment_id, function(err, comment) {
+            if (err)
+                res.send(err);
+            (req.body.author) ? comment.author = req.body.author : null;
+            (req.body.text) ? comment.text = req.body.text : null;
+            comment.save(function(err) {
+                if (err)
+                    res.send(err);
+                res.json({ message: 'Comment has been updated' });
+            });
+        });
+    })
+    .delete(function(req, res) {
+        Comment.remove({ _id: req.params.comment_id }, function(err, comment) {
+            if (err)
+                res.send(err);
+            res.json({ message: 'Comment has been deleted' })
+        })
     });
 
 app.use('/api', router);
