@@ -21,8 +21,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "nodemon server.js",
-    "start-dev": "npm-run-all --parallel start server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
