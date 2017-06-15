@@ -3,7 +3,7 @@ import Comment from './Comment';
 
 class CommentList extends Component {
     render() {
-        let commentNodes = this.props.data.map(comment => {
+        let comments = this.props.data.map(comment => {
             return (
                 <Comment
                     author={ comment.author }
@@ -17,7 +17,7 @@ class CommentList extends Component {
         })
         return (
             <div>
-                { commentNodes }
+                { comments }
             </div>
         )
     }
