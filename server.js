@@ -4,7 +4,7 @@ let express = require('express');
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 let cors = require('cors');
-let Comment = require('./model/comments')
+let Comment = require('./src/js/models/comments')
 
 let app = express();
 let router = express.Router();
