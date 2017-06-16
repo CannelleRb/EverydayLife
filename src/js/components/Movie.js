@@ -6,14 +6,14 @@ class Movie extends Component {
         super(props);
         this.state= {
             title: '',
-            tagline: ''
+            overview: ''
         };
     }
     render() {
         return (
             <div>
                 <h3>{this.props.title}</h3>
-                <span>{this.props.tagline}</span>
+                <span>{this.props.overview}</span>
             </div>
         )
     }

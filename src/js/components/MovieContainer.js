@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Movie from './Movie';
+import MovieList from './MovieList';
 
 class MovieContainer extends Component {
     constructor(props) {
@@ -11,7 +11,8 @@ class MovieContainer extends Component {
     loadMoviesFromServer() {
         axios.get(this.props.url)
             .then(res => {
-                this.setState({ data: res.data });
+                console.log(res.data)
+                this.setState({ data: res.data.results });
             })
     }
     componentDidMount() {
@@ -21,10 +22,9 @@ class MovieContainer extends Component {
     render() {
         return (
             <div>
-                <Movie
-                    title={ this.state.data.title }
-                    tagline={ this.state.data.tagline }>
-                </Movie>
+                <h2>Films: </h2>
+                <MovieList
+                    data={ this.state.data }/>
             </div>
         )
     }
