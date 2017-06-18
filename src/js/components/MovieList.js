@@ -7,9 +7,10 @@ class MovieList extends Component {
         let movies = this.props.data.map(movie => {
             let nb = "/"+movie.id
             return (
-                <div>
+                <div key={ movie.id }>
                     <Movie
-                        title={ movie.title }>
+                        title={ movie.title }
+                        uniqueID={ movie.id }>
                     </Movie>
                     <Link to={nb}>Fiche du film</Link>
                 </div>
