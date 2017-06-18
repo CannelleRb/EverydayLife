@@ -5,7 +5,7 @@ import Movie from "./Movie";
 class MovieDetails extends Component {
     constructor(props) {
         super(props);
-        this.state = {data: null};
+        this.state = {data: []};
         this.loadMovieFromServer = this.loadMovieFromServer.bind(this)
     }
 
