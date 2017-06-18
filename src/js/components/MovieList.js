@@ -9,8 +9,7 @@ class MovieList extends Component {
             return (
                 <div>
                     <Movie
-                        title={ movie.title }
-                        overview={ movie.overview }>
+                        title={ movie.title }>
                     </Movie>
                     <Link to={nb}>Fiche du film</Link>
                 </div>

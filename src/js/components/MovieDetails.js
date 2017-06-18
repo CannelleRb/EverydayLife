@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import Movie from "./Movie";
-import { Link } from "react-router-dom";
+import marked from 'marked';
 
-class MovieDetails extends Component {
+class Movie extends Component {
     constructor(props) {
         super(props);
-        this.state = {data: []};
-        this.loadMovieFromServer = this.loadMovieFromServer.bind(this)
+        this.state= {
+            title: '',
+            overview: ''
+        };
     }
-
-    loadMovieFromServer() {
-        let nb = parseInt(this.props.match.params.number, 10);
-        let movieUrl = "https://api.themoviedb.org/3/movie/" + nb + "?api_key=f5edf8745b3ada6d299c0f7b21108020&language=fr"
-        axios.get(movieUrl)
-            .then(res => {
-                this.setState({data: res.data})
-            })
-    }
-
-    componentDidMount() {
-        this.loadMovieFromServer();
-    }
-
     render() {
         return (
             <div>
-                <Movie
-                    title={ this.state.data.title }
-                    overview={ this.state.data.overview }>
-                </Movie>
-
-                <Link to="/">Retour à la page d'accueil</Link>
+                <h3>{this.props.title}</h3>
+                <span>{this.props.overview}</span>
             </div>
         )
     }
 }
-export default MovieDetails
+export default Movie;
