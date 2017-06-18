@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Movie from "./Movie";
+import { Link } from "react-router-dom";
 
 class MovieDetails extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class MovieDetails extends Component {
 
     loadMovieFromServer() {
         let nb = parseInt(this.props.match.params.number, 10);
-        let movieUrl = "https://api.themoviedb.org/3/movie/" + nb + "?api_key=f5edf8745b3ada6d299c0f7b21108020"
+        let movieUrl = "https://api.themoviedb.org/3/movie/" + nb + "?api_key=f5edf8745b3ada6d299c0f7b21108020&language=fr"
         axios.get(movieUrl)
             .then(res => {
                 this.setState({data: res.data})
@@ -24,10 +25,14 @@ class MovieDetails extends Component {
 
     render() {
         return (
-            <Movie
-                title={ this.state.data.title }
-                overview={ this.state.data.tagline }>
-            </Movie>
+            <div>
+                <Movie
+                    title={ this.state.data.title }
+                    overview={ this.state.data.overview }>
+                </Movie>
+
+                <Link to="/">Retour à la page d'accueil</Link>
+            </div>
         )
     }
 }

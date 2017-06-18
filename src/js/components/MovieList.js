@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 class MovieList extends Component {
     render() {
-        console.log(this.props.data)
-
         let movies = this.props.data.map(movie => {
             let nb = "/"+movie.id
             return (
@@ -14,7 +12,7 @@ class MovieList extends Component {
                         title={ movie.title }
                         overview={ movie.overview }>
                     </Movie>
-                    <Link to={{nb}}>Fiche du film</Link>
+                    <Link to={nb}>Fiche du film</Link>
                 </div>
             )
         })

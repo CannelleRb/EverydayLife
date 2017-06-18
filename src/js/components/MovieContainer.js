@@ -11,7 +11,6 @@ class MovieContainer extends Component {
     loadMoviesFromServer() {
         axios.get(this.props.url)
             .then(res => {
-                console.log(res.data)
                 this.setState({ data: res.data.results });
             })
     }
