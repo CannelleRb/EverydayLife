@@ -1,0 +1,31 @@
+.movie-details {
+    display: flex;
+    padding: 10px;
+}
+
+.second-column {
+    margin: auto 10px;
+    color: white;
+    background-color: #181818;
+    text-align: justify;
+    padding: 0px 10px 20px 10px;
+}
+
+.movie-details-information {
+    padding-bottom: 20px;
+}
+
+.button {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: bolder;
+    font-size: medium;
+}
+
+.button:hover {
+    background-color: red;
+}

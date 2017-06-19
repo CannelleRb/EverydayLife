@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 import MovieDetails from "./MovieDetails";
 import '../../styles/MovieDetailsContainer.css';
 
@@ -44,8 +43,6 @@ class MovieDetailsContainer extends Component {
                     poster_path ={ posterPath }
                     overview={ this.state.data.overview }>
                 </MovieDetails>
-
-                <Link to="/">Retour à la page d'accueil</Link>
             </div>
         )
     }
