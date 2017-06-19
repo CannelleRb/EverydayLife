@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Movie from './Movie';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import '../../styles/MovieList.css';
 
 class MovieList extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class MovieList extends Component {
         let configUrl = "https://api.themoviedb.org/3/configuration?api_key=f5edf8745b3ada6d299c0f7b21108020"
         axios.get(configUrl)
             .then(res => {
-                let url = res.data.images.base_url + res.data.images.poster_sizes[0] + "/"
+                let url = res.data.images.base_url + res.data.images.poster_sizes[2] + "/"
                 this.setState({data: url})
             })
     }
@@ -24,7 +24,6 @@ class MovieList extends Component {
     }
     render() {
         let movies = this.props.data.map(movie => {
-            let nb = "/"+movie.id
             let posterPath = this.state.data + movie.poster_path
             return (
                 <div key={ movie.id }>
@@ -34,12 +33,11 @@ class MovieList extends Component {
                         vote_average={ movie.vote_average }
                         uniqueID={ movie.id }>
                     </Movie>
-                    <Link to={nb}>Fiche du film</Link>
                 </div>
             )
         })
         return (
-            <div>
+            <div className="movie-list">
                 { movies }
             </div>
         )

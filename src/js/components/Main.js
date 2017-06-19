@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import MovieContainer from "./MovieContainer";
 import MovieDetailsContainer from "./MovieDetailsContainer";
+import '../../styles/Main.css'
 
 const Main = () => {
     return (

@@ -1,0 +1,35 @@
+.movie {
+    width: 185px;
+    height: 278px;
+    text-align: center;
+}
+
+.movie:hover img {
+    opacity: 0.5;
+}
+
+.movie-information {
+    width: 185px;
+    height: 278px;
+    position: relative;
+    color: white;
+    opacity: 0;
+    bottom: 200px;
+}
+
+.movie:hover .movie-information {
+    opacity: 1;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:active h3, .link:active span {
+    opacity: 0;
+}
+
+.link:active img {
+    opacity: 0.3;
+}

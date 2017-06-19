@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieList from './MovieList';
+import '../../styles/MovieContainer.css';
 
 class MovieContainer extends Component {
     constructor(props) {
@@ -21,7 +22,6 @@ class MovieContainer extends Component {
     render() {
         return (
             <div>
-                <h2>Films: </h2>
                 <MovieList
                     data={ this.state.data }/>
             </div>

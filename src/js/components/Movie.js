@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import marked from 'marked';
+import '../../styles/Movie.css'
+import { Link } from "react-router-dom";
 
 class Movie extends Component {
     constructor(props) {
@@ -9,11 +10,16 @@ class Movie extends Component {
         };
     }
     render() {
+        let nb = "/"+this.props.uniqueID
         return (
-            <div>
+            <div className="movie">
+                <Link to={nb} className="link">
                 <img src={this.props.poster_path} alt={this.props.title}/>
-                <h3>{this.props.title}</h3>
-                <span>{this.props.vote_average}/10</span>
+                <div className="movie-information">
+                    <h3>{this.props.title}</h3>
+                    <span>{this.props.vote_average}/10</span>
+                </div>
+                </Link>
             </div>
         )
     }

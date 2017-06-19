@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Movie from "./Movie";
 import { Link } from "react-router-dom";
 import MovieDetails from "./MovieDetails";
+import '../../styles/MovieDetailsContainer.css';
 
 class MovieDetailsContainer extends Component {
     constructor(props) {
