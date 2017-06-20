@@ -11,6 +11,11 @@ class Movie extends Component {
     }
     render() {
         let nb = "/"+this.props.uniqueID
+        /*let sectionStyle = {
+            width: "100%",
+            height: "100%",
+            backgroundImage: "url(" + posterPath + ")"
+        };*/
         return (
             <div className="movie">
                 <Link to={nb} className="link">

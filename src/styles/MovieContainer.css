@@ -1,0 +1,27 @@
+.pagination_wrapper {
+    text-align: center;
+}
+
+.pagination {
+    padding: 10px;
+    display: inline-block;
+}
+
+.pagination a {
+    background-color: gray;
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: red;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination a {
+    margin: 0 4px;
+}

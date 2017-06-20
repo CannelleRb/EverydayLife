@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import MovieContainer from "./MovieContainer";
 import MovieDetailsContainer from "./MovieDetailsContainer";
 import '../../styles/Main.css'
@@ -9,10 +9,9 @@ const Main = () => {
         <main>
             <Switch>
                 <Route exact path="/" render={() => (
-                    <MovieContainer
-                        url='https://api.themoviedb.org/3/discover/movie?api_key=f5edf8745b3ada6d299c0f7b21108020&language=fr&sort_by=popularity.desc'
-                        pollInterval={10000} />
+                    <Redirect to="/page/1" />
                 )}/>
+                <Route path="/page/:number" component={ MovieContainer }/>
                 <Route path="/:number"  component={ MovieDetailsContainer }/>
             </Switch>
         </main>
