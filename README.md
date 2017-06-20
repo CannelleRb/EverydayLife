@@ -27,6 +27,5 @@
     * Display film genre(s) in movie list (drama/action/etc.)
 
 ### Bugs to fix
-* Fix pagination
 
 * Find a way to display .movie and .movie-information correctly WITHOUT entering the exact size of the current image (very dirty code...)

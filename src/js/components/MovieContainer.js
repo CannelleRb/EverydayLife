@@ -24,7 +24,11 @@ class MovieContainer extends Component {
                 this.setState({ data: res.data.results, nbPages: res.data.total_pages });
             })
     }
+    componentWillReceiveProps(nextProps) {
+        this.setState({ page: (nextProps.match) ? parseInt(nextProps.match.params.number, 10) : 1 });
+    }
     componentDidMount() {
+        console.log(this.props.match.params)
         this.loadMoviesFromServer();
         setInterval(this.loadMoviesFromServer, this.state.pollInterval);
     }
