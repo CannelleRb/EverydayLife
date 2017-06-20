@@ -10,7 +10,7 @@ class Movie extends Component {
         };
     }
     render() {
-        let nb = "/"+this.props.uniqueID
+        let nb = "/"+this.props.uniqueID;
         /*let sectionStyle = {
             width: "100%",
             height: "100%",

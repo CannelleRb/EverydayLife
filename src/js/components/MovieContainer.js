@@ -17,8 +17,8 @@ class MovieContainer extends Component {
         this.loadMoviesFromServer = this.loadMoviesFromServer.bind(this);
     }
     loadMoviesFromServer() {
-        console.log(this.state.page)
-        let currentPageUrl = this.state.url + this.state.page
+        console.log(this.state.page);
+        let currentPageUrl = this.state.url + this.state.page;
         axios.get(currentPageUrl)
             .then(res => {
                 this.setState({ data: res.data.results, nbPages: res.data.total_pages });
@@ -31,7 +31,7 @@ class MovieContainer extends Component {
     render() {
         let previous;
         let next;
-        let page = this.state.page
+        let page = this.state.page;
 
         if (page > 1) {
             previous = page - 1
@@ -42,8 +42,8 @@ class MovieContainer extends Component {
         }
         else {next = page}
 
-        previous = "/page/" + previous
-        next = "/page/" + next
+        previous = "/page/" + previous;
+        next = "/page/" + next;
 
         return (
             <div>

@@ -11,10 +11,10 @@ class MovieList extends Component {
     }
 
     loadPosterUrlFromServer() {
-        let configUrl = "https://api.themoviedb.org/3/configuration?api_key=f5edf8745b3ada6d299c0f7b21108020"
+        let configUrl = "https://api.themoviedb.org/3/configuration?api_key=f5edf8745b3ada6d299c0f7b21108020";
         axios.get(configUrl)
             .then(res => {
-                let url = res.data.images.base_url + res.data.images.poster_sizes[2] + "/"
+                let url = res.data.images.base_url + res.data.images.poster_sizes[2] + "/";
                 this.setState({data: url})
             })
     }
@@ -24,7 +24,7 @@ class MovieList extends Component {
     }
     render() {
         let movies = this.props.data.map(movie => {
-            let posterPath = this.state.data + movie.poster_path
+            let posterPath = this.state.data + movie.poster_path;
             return (
                 <div key={ movie.id }>
                     <Movie
@@ -35,7 +35,7 @@ class MovieList extends Component {
                     </Movie>
                 </div>
             )
-        })
+        });
         return (
             <div className="movie-list">
                 { movies }
